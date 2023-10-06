@@ -27,3 +27,10 @@
 1696615392171:/contact-us New request Received 
 1696615422958:/search?search_query=javascript New request Received 
 1696615445931:/search?search_query=javascript+tutorial+of+tic+tac+toe+game New request Received 
+1696626104848: GET / New request Received 
+1696626163514: GET / New request Received 
+1696626214486: GET / New request Received 
+1696626230392: GET /about New request Received 
+1696626239170: GET /about?myname=Harsh New request Received 
+1696626533837: GET / New request Received 
+1696626545083: GET /signup New request Received 
