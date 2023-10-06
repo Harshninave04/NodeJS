@@ -35,3 +35,8 @@ fs.rmSync("./copy.txt"); // This is used to delete the particular file
 console.log(fs.statSync("./text.txt")); // It shows the stat of the files
 
 // We can do anything with file system (fs).
+
+
+
+const os = require("os");
+console.log("There are total " + os.cpus().length + " threads");
