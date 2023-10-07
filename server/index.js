@@ -18,9 +18,38 @@
 
 const http = require("http");
 const fs = require("fs");
-const url = require("url");
+const url = require("url"); // Installed the package url from the npm.org , [npm install url]
 
-const myServer = http.createServer((req, res) => {
+const express = require("express");
+
+const app = express(); // Here app is nothing but the myHandler function in the express
+app.get("/", (req, res) => {
+  return res.send("You're directed to Homepage !!")
+})
+app.get("/about", (req, res) => {
+  return res.send("You're directed to about page !!")
+})
+app.get("/contact", (req, res) => {
+  return res.send("Hello my name is Harsh Ninave !! contact me on my email:harshninave58@gmail.com")
+})
+app.get("/form", (req, res) => {
+  return res.send("Hello "+ req.query.name + ", Fill the formality form to let us know why you reach out to us !")
+})
+// Here we don't have to write url module separatley to access query name
+// Simply use req.query.<query-name>
+
+// What Express says if i am making everything easy for you then you don't have do such thing also i.e. [const myServer = http.createServer(myHandler); & myServer.listen(5000, () => console.log(`Server running at http://localhost:5000/`));]
+
+app.listen(8000, ()=> console.log(`Server is running on http://localhost:8000/`))
+
+
+
+// const myServer = http.createServer(app)
+
+
+
+/*
+function myHandler(req, res) {
   // req -> request, res-> response
   if (req.url === "/favicon.ico") return res.end();
   const log = `${Date.now()}: ${req.method} ${req.url} New request Received \n`;
@@ -56,6 +85,10 @@ const myServer = http.createServer((req, res) => {
     // res.end("Hello World !!");
   });
   console.log("New Request Received!");
-});
+}
+*/
 
-myServer.listen(5000, () => console.log(`Server running at http://localhost:5000/`));
+// const myServer = http.createServer(myHandler);
+// Above module [createServer] is used for creating a server manually only by using plane nodejs
+
+// myServer.listen(5000, () => console.log(`Server running at http://localhost:5000/`));
